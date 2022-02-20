@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <title>Paramétrage du logo pour un cours</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="container mt-5">
+<h1 class="hidde">Paramétrage du logo pour un cours</h1>
+
+<div class="row mt-5">
+    <form class="col-12 col-md-6" id="generate" method="get" action="#">
+        <div class="mb-3">
+            <label for="titleTextElement" class="form-label">Nom complet du cours :</label>
+            <input required type="text" class="form-control" id="titleTextElement" aria-describedby="title"
+                   placeholder="Exemple : Développement côté client">
+        </div>
+        <div class="mb-3">
+            <label for="acronymTextElement" class="form-label">Acronyme du cours :</label>
+            <input required type="text" class="form-control" id="acronymTextElement" aria-describedby="acronyme"
+                   placeholder="Exemple : DCC, MMI, XML, etc.">
+        </div>
+        <label for="bg-color" class="form-label">Choisissez la couleur de fond :</label>
+        <input required type="color" class="form-control form-control-color" id="bg-color"
+               title="Choisissez la couleur de fond">
+        <label for="tx-color" class="form-label">Choisissez la couleur du texte :</label>
+        <input required type="color" class="form-control form-control-color" id="tx-color"
+               title="Choisissez la couleur du texte">
+        <a id="download" download="download.svg" href="#" class="btn btn-primary mt-5">Télécharger le document SVG</a>
+    </form>
+    <div class="col-12 col-md-6">
+        <svg id="Logo" xmlns="http://www.w3.org/2000/svg"
+             x="0px" y="0px"
+             viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
+<rect id="background" fill="#4BB696" width="2000" height="2000"/>
+            <text fill="#ffffff" id="title"
+                  style="font-family: 'MonoLisa-Regular', monospace;font-size: 83px; letter-spacing: -7;"
+                  text-anchor="middle" alignment-baseline="middle" x="50%" y="85%">Multimédia Intéractif</text>
+            <text fill="#ffffff" id="acronym"
+                  style="font-family: 'MonoLisa-Bold', monospace;font-size: 402px;letter-spacing: -9;"
+                  text-anchor="middle" alignment-baseline="middle" x="50%"
+                  y="44%">MMI</text>
+            <path id="lBrace" fill="#ffffff" style="opacity: 0.5;" d="M771.2,1361.3l-130.7,0.1c-147.1,0-220.6-73.6-220.6-220.7v-137.9
+	c0-55.2-36.8-82.8-110.3-82.8V809.8c73.6,0,110.3-27.6,110.3-82.8V589.1c0-147.1,73.6-220.6,220.6-220.6h130.7v110.3H640.5
+	c-73.6,0-110.3,36.8-110.3,110.3V727c0,80.9-36.8,126.9-110.3,137.9c73.6,11,110.3,57,110.3,137.9v137.9
+	c0,73.6,36.8,110.3,110.3,110.3h130.7L771.2,1361.3L771.2,1361.3z"/>
+            <path fill="#ffffff" id="rBrace" style="opacity: 0.5;" d="M1228.8,366.6l130.7-0.1c147.1,0,220.7,73.6,220.7,220.7V725
+	c0,55.2,36.8,82.8,110.3,82.8v110.3c-73.6,0-110.3,27.6-110.3,82.8v137.9c0,147.1-73.6,220.6-220.7,220.6h-130.7v-110.3h130.7
+	c73.6,0,110.3-36.8,110.3-110.3v-137.9c0-80.9,36.8-126.9,110.3-137.9c-73.6-11-110.3-57-110.3-137.9V587.1
+	c0-73.6-36.8-110.3-110.3-110.3h-130.7V366.6z"/>
+</svg>
+    </div>
+</div>
+<script src="dist/js/main.js"></script>
+</body>
+</html>

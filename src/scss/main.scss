@@ -1,0 +1,19 @@
+$font-family-base: "helvetica neue";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+@font-face {
+  font-family: MonoLisa-Regular;
+  src: url("../MonoLisa/MonoLisa-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'MonoLisa-Bold';
+  font-weight: bold;
+  src: url("../MonoLisa/MonoLisa-Bold.otf") format("opentype");
+}
+
+.svg-container {
+  max-width: 500px;
+}
+
