@@ -12,7 +12,7 @@
 
 
 
-Dans le cadre de cet exercice, nous vous demandons de programmer un mini générateur de logo avec JavaScript.
+Dans le cadre de cet exercice, nous vous demandons de programmer un mini générateur de logo avec JavaScript. Vous pouvez voir le résultat sur [cette page](https://hepl-mmi.github.io/mmi-produce-svg/).
 
 
 
