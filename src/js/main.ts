@@ -12,16 +12,31 @@ type logoType = {
     acronymTextElement: SVGTextElement,
     titleTextElement: SVGTextElement,
     backgroundElements: SVGRectElement,
-    textElements: SVGTextElement[],
+    lBrace: SVGPathElement,
+    rBrace: SVGPathElement,
+    textElements: SVGElement[]
 }
 
-
-const svgLogo: logoType = {
-    acronymTextElement: svgElement.querySelector('#acronym'),
-    titleTextElement: svgElement.querySelector('#title'),
-    backgroundElements: svgElement.querySelector('#background'),
-    textElements: [svgElement.querySelector('#acronym'), svgElement.querySelector('#title'), svgElement.querySelector('#lBrace'), svgElement.querySelector('#rBrace')],
+/*
+This function retrieves the necessary elements from the SVG document. We use a function to be able to use the same information several times
+ */
+function parseSVG(): logoType {
+    const acronymTextElement: SVGTextElement = svgElement.querySelector('#acronym');
+    const titleTextElement: SVGTextElement = svgElement.querySelector('#title');
+    const backgroundElements: SVGRectElement = svgElement.querySelector('#background');
+    const lBrace: SVGPathElement = svgElement.querySelector('#lBrace');
+    const rBrace: SVGPathElement = svgElement.querySelector('#rBrace');
+    return {
+        acronymTextElement: acronymTextElement,
+        titleTextElement: titleTextElement,
+        backgroundElements: backgroundElements,
+        lBrace: lBrace,
+        rBrace: rBrace,
+        textElements: [acronymTextElement, titleTextElement, lBrace, rBrace]
+    };
 }
+
+const svgLogo: logoType = parseSVG();
 
 form?.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -62,12 +77,21 @@ function loadDataInDForm(): void {
     textColorInput.value = svgLogo.acronymTextElement.getAttribute("fill");
 }
 
+function separateBraces() {
+    // We get the current width of the acronym Element and divide it by the number of letters to find out how much space is needed for 1.
+    let acronymLetterWidth: number = svgLogo.acronymTextElement.getClientRects()[0].width * 1.1;
+    console.log(svgLogo.acronymTextElement.getClientRects()[0].width);
+    //acronymLetterWidth += svgLogo.backgroundElements.getClientRects()[0].width * 0.2;
+    svgLogo.lBrace.setAttribute("transform", `translate(${Math.trunc(-acronymLetterWidth)},0)`);
+    svgLogo.rBrace.setAttribute("transform", `translate(${Math.trunc(acronymLetterWidth)},0)`);
+}
 
 function drawLogo(info: { id: string; value: string }): void {
-    console.log(info)
     // @ts-ignore
     svgLogo[info.id].textContent = info.value
+    separateBraces();
 }
 
 
 loadDataInDForm();
+separateBraces()
