@@ -2,7 +2,7 @@
   "name": "mmi-produce-svg",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/hepl-dcc/jjs-tp-produice-svg",
+  "repository": "https://github.com/hepl-dcc/mmi-produce-svg",
   "author": "Daniel Schreurs <daniedaniel.schreurs@hotmail.com>",
   "license": "MIT",
   "scripts": {
