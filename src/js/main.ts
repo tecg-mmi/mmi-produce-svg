@@ -1,7 +1,7 @@
 const form: HTMLFormElement = document.getElementById("generate") as HTMLFormElement;
 const backgroundColorInput: HTMLInputElement = form.querySelector("#bg-color");
 const downloadBTN: HTMLAnchorElement = form.querySelector("#download");
-const textColorInput: HTMLInputElement = form.querySelector("#tx-color");
+const textColorInput: HTMLInputElement = form.querySelector("#txt-color");
 const acronymInput: HTMLInputElement = form.querySelector("#acronymTextElement");
 const titleInput: HTMLInputElement = form.querySelector("#titleTextElement");
 const textInputs: HTMLInputElement[] = [acronymInput, titleInput];
@@ -78,12 +78,10 @@ function loadDataInDForm(): void {
 }
 
 function separateBraces() {
-    // We get the current width of the acronym Element and divide it by the number of letters to find out how much space is needed for 1.
-    let acronymLetterWidth: number = svgLogo.acronymTextElement.getClientRects()[0].width * 1.1;
+    let acronymLetterWidth: number = svgLogo.acronymTextElement.getComputedTextLength() * 0.75;
     console.log(svgLogo.acronymTextElement.getClientRects()[0].width);
-    //acronymLetterWidth += svgLogo.backgroundElements.getClientRects()[0].width * 0.2;
-    svgLogo.lBrace.setAttribute("transform", `translate(${Math.trunc(-acronymLetterWidth)},0)`);
-    svgLogo.rBrace.setAttribute("transform", `translate(${Math.trunc(acronymLetterWidth)},0)`);
+    svgLogo.lBrace.setAttribute("transform", `translate(${Math.trunc(-acronymLetterWidth / 2)},0)`);
+    svgLogo.rBrace.setAttribute("transform", `translate(${Math.trunc(acronymLetterWidth / 2)},0)`);
 }
 
 function drawLogo(info: { id: string; value: string }): void {
