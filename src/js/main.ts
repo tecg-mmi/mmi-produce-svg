@@ -92,4 +92,4 @@ function drawLogo(info: { id: string; value: string }): void {
 
 
 loadDataInDForm();
-separateBraces()
+separateBraces();
